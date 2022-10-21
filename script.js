@@ -1,6 +1,7 @@
 let myLibrary = [];
 let title = document.querySelector('.title');
 let author = document.querySelector('.author');
+let button = document.querySelector('#btn');
 
 function Book(name, author) {
     this.name = name;
@@ -19,8 +20,7 @@ addBookToLibrary(LOTR);
 
 console.log(myLibrary)
 
-function display(library) {
-    for (let book of library) {
+function display(book) {
         let titleDiv = document.createElement('div');
         title.appendChild(titleDiv);
         let authorDiv = document.createElement('div');
@@ -29,7 +29,15 @@ function display(library) {
         let author1 = `${book.author}`; 
         titleDiv.innerHTML = name1;
         authorDiv.innerHTML = author1;
-    };
 };
 
-display(myLibrary);
+
+button.addEventListener('click', ask);
+
+function ask() {
+    let titlePrompt = prompt("What's the title, mate?");
+    let authorPrompt = prompt("Who's the author, lad?");
+    let obj = new Book (titlePrompt, authorPrompt);
+    addBookToLibrary(obj);
+    display(obj);
+}
