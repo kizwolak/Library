@@ -15,6 +15,8 @@ function addBookToLibrary(obj) {
 };
 
 addBookToLibrary(HP);
+addBookToLibrary(LOTR);
+
 console.log(myLibrary)
 
 function display(library) {
@@ -22,11 +24,11 @@ function display(library) {
         let titleDiv = document.createElement('div');
         title.appendChild(titleDiv);
         let authorDiv = document.createElement('div');
-        title.appendChild(authorDiv);
+        author.appendChild(authorDiv);
         let name1 = `${book.name}`;
         let author1 = `${book.author}`; 
-        titleDiv.innerHTML += (name1);
-        authorDiv.innerHTML += (author1);
+        titleDiv.innerHTML = name1;
+        authorDiv.innerHTML = author1;
     };
 };
 
