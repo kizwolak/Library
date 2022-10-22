@@ -1,6 +1,5 @@
 let myLibrary = [];
-let title = document.querySelector('.title');
-let author = document.querySelector('.author');
+let container = document.querySelector('.container')
 let button = document.querySelector('#btn');
 
 function Book(name, author) {
@@ -8,27 +7,26 @@ function Book(name, author) {
     this.author = author;
 };
 
-let HP = new Book ("HP", "JKR");
-let LOTR = new Book ("LOTR", "JRRT");
-
 function addBookToLibrary(obj) {
     myLibrary.push(obj);
 };
 
-addBookToLibrary(HP);
-addBookToLibrary(LOTR);
-
 console.log(myLibrary)
 
 function display(book) {
-        let titleDiv = document.createElement('div');
-        title.appendChild(titleDiv);
-        let authorDiv = document.createElement('div');
-        author.appendChild(authorDiv);
-        let name1 = `${book.name}`;
-        let author1 = `${book.author}`; 
-        titleDiv.innerHTML = name1;
-        authorDiv.innerHTML = author1;
+    let newDiv = document.createElement('div');
+    newDiv.className = ('newDiv');
+    container.appendChild(newDiv);
+    let titleDiv = document.createElement('div');
+    newDiv.appendChild(titleDiv);
+    let authorDiv = document.createElement('div');
+    newDiv.appendChild(authorDiv);
+    let name1 = `${book.name}`;
+    let author1 = `${book.author}`; 
+    titleDiv.innerHTML = name1;
+    authorDiv.innerHTML = author1;
+    let deleteBtn = document.createElement('button');
+    authorDiv.after(deleteBtn);
 };
 
 
@@ -41,3 +39,4 @@ function ask() {
     addBookToLibrary(obj);
     display(obj);
 }
+

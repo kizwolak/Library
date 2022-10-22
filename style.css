@@ -11,6 +11,14 @@
     justify-content: space-around;
     width: 100vw;
     height: 100vh;
+    flex-direction: column;
 }
 
+.newDiv {
+    display: flex;
+}
 
+.container>button {
+    position: fixed;
+    bottom: 30%;
+}
