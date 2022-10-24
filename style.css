@@ -21,10 +21,9 @@ body {
 }
 
 .container {
-    display: flex;
+    display: grid;
     width: 80vw;
     height: 80vh;
-    flex-direction: row;
     border: 10px solid pink;
     border-radius: 1em;
     margin-top: 5em;
@@ -33,19 +32,11 @@ body {
     padding: 3em;
 }
 
-.title, .author {
-    font-family: "Roboto";
-    font-size: 3em;
-    color: white;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+.container>* {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.title>*, .author>* {
-    overflow-wrap: anywhere;
-    font-size: 0.8em;
-    display: flex;
-    flex-direction: row;
-}
 
 #btn {
     font-size: 2em;
@@ -61,6 +52,8 @@ body {
 }
 
 .bookDiv {
-    display: flex;
+    display: grid;
     height: fit-content;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
 }
