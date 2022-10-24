@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(./Roboto-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,18 +30,18 @@ body {
     margin-top: 6em;
     margin-bottom: 2em;
     gap: 5em;
+    padding: 2em;
 }
 
-.newDiv {
-    display: flex;
-    gap: 10em;
-    background-color: aliceblue;
-    width: 100%;
-    padding-left: 1em;
-    font-size: 2em;
+.title, .author {
+    font-family: "Roboto";
+    font-size: 3em;
+    color: white;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 
-.newDiv>button {
+.title>*, .author>* {
+    overflow-wrap: anywhere;
+    font-size: 0.8em;
 
 }
-
