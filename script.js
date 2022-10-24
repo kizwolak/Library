@@ -14,10 +14,13 @@ function addBookToLibrary(obj) {
 };
 
 function display(book) {
+    let bookDiv = document.createElement('div');
+    bookDiv.className = "bookDiv"; 
+    container.appendChild(bookDiv);
     let titleDiv = document.createElement('div');
-    titles.appendChild(titleDiv);
+    bookDiv.appendChild(titleDiv);
     let authorDiv = document.createElement('div');
-    authors.appendChild(authorDiv);
+    bookDiv.appendChild(authorDiv);
     let name1 = `${book.name}`;
     let author1 = `${book.author}`; 
     titleDiv.innerHTML = name1;

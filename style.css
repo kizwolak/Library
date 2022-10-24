@@ -59,3 +59,8 @@ body {
     padding: 0.5em;
     background-color: transparent;
 }
+
+.bookDiv {
+    display: flex;
+    height: fit-content;
+}
