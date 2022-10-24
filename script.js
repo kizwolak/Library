@@ -13,27 +13,29 @@ function addBookToLibrary(obj) {
     myLibrary.push(obj);
 };
 
-function display(book) {
-    let bookDiv = document.createElement('div');
-    bookDiv.className = "bookDiv"; 
-    container.appendChild(bookDiv);
-    let titleDiv = document.createElement('div');
-    bookDiv.appendChild(titleDiv);
-    let authorDiv = document.createElement('div');
-    bookDiv.appendChild(authorDiv);
-    let name1 = `${book.name}`;
-    let author1 = `${book.author}`; 
-    titleDiv.innerHTML = name1;
-    authorDiv.innerHTML = author1;
-    let deleteBtn = document.createElement('button');
-    authorDiv.after(deleteBtn);
-    deleteBtn.addEventListener('click', function(e) {
-        e.target.parentNode.remove();
-    });
-    deleteBtn.textContent = "Delete the book, bro!";
-    let read = document.createElement('button');
-    deleteBtn.after(read);
-    read.textContent = "Never read it, pal!";
+function display(library) {
+    for (prop in library) {
+        let bookDiv = document.createElement('div');
+        bookDiv.className = "bookDiv"; 
+        container.appendChild(bookDiv);
+        let titleDiv = document.createElement('div');
+        bookDiv.appendChild(titleDiv);
+        let authorDiv = document.createElement('div');
+        bookDiv.appendChild(authorDiv);
+        let name1 = `${prop.name}`;
+        let author1 = `${prop.author}`; 
+        titleDiv.innerHTML = name1;
+        authorDiv.innerHTML = author1;
+        let deleteBtn = document.createElement('button');
+        authorDiv.after(deleteBtn);
+        deleteBtn.addEventListener('click', function(e) {
+            e.target.parentNode.remove();
+        });
+        deleteBtn.textContent = "Delete the book, bro!";
+        let read = document.createElement('button');
+        deleteBtn.after(read);
+        read.textContent = "Never read it, pal!";
+    };
 };
 
 
@@ -44,5 +46,5 @@ function ask() {
     let authorPrompt = prompt("Who's the author, lad?");
     let obj = new Book (titlePrompt, authorPrompt);
     addBookToLibrary(obj);
-    display(obj);
+    display(myLibrary);
 }

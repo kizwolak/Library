@@ -42,6 +42,15 @@ body {
     padding: 0.3em;
     color: black;
     border: 5px solid pink;
+    border-radius: 1em;
+}
+
+#btn:hover {
+    background-color: rgb(218, 212, 212);
+}
+
+#btn:active {
+    background-color: antiquewhite;
 }
 
 .author>button {
@@ -70,4 +79,12 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 3fr 3fr 1fr 1fr;
+    margin-bottom: 1em;
+}
+
+.headerDivs>div {
+    font-family: "Roboto";
+    font-size: 2.5em;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
