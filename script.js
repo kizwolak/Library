@@ -1,8 +1,8 @@
 let myLibrary = [];
 let container = document.querySelector('.container')
 let button = document.querySelector('#btn');
-let titles = document.querySelector(".title");
-let authors = document.querySelector(".author");
+let displayContents = 0;
+let bookDivs =  document.querySelector('.books');
 
 function Book(name, author) {
     this.name = name;
@@ -11,15 +11,18 @@ function Book(name, author) {
 
 function addBookToLibrary(obj) {
     myLibrary.push(obj);
-    const index = myLibrary.map(obj => obj.name).indexOf(`${obj.name}`);
-    display(myLibrary[index]);
 };
 
-function display(prop) {
-
+function display(library) {
+    library.forEach(function (prop) {
+        if (displayContents > 0) {
+            bookDivs.innerHTML = '';
+        }
+        displayContents += 1;
+        const index = myLibrary.map(prop => prop.name).indexOf(`${prop.name}`);
         let bookDiv = document.createElement('div');
         bookDiv.className = "bookDiv"; 
-        container.appendChild(bookDiv);
+        bookDivs.appendChild(bookDiv);
         let titleDiv = document.createElement('div');
         bookDiv.appendChild(titleDiv);
         let authorDiv = document.createElement('div');
@@ -30,25 +33,25 @@ function display(prop) {
         authorDiv.innerHTML = author1;
         let deleteBtn = document.createElement('button');
         authorDiv.after(deleteBtn);
-        const index = myLibrary.map(prop => prop.name).indexOf(`${prop.name}`);
         deleteBtn.addEventListener('click', function(e) {
             e.target.parentNode.remove();
-            myLibrary.splice(index, 1);
+            library.splice(index, 1);
         });
-        deleteBtn.textContent = "Delete the book, buddy!";
+        deleteBtn.textContent = "Delete the book!";
         let read = document.createElement('button');
         deleteBtn.after(read);
-        read.textContent = "Never read it, pal!";
-
+        read.textContent = "Never read it!";
+    });
 };
 
 
 button.addEventListener('click', ask);
 
 function ask() {
-    let titlePrompt = prompt("What's the title, mate?");
-    let authorPrompt = prompt("Who's the author, lad?");
+    let titlePrompt = prompt("What's the title?");
+    let authorPrompt = prompt("Who's the author?");
     let obj = new Book (titlePrompt, authorPrompt);
     addBookToLibrary(obj);
+    display(myLibrary);
 }
 
