@@ -27,6 +27,9 @@ function display(book) {
     authorDiv.innerHTML = author1;
     let deleteBtn = document.createElement('button');
     authorDiv.after(deleteBtn);
+    deleteBtn.addEventListener('click', function(e) {
+        e.target.parentNode.remove();
+    });
 };
 
 
@@ -39,4 +42,5 @@ function ask() {
     addBookToLibrary(obj);
     display(obj);
 }
+
 
