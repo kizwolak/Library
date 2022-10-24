@@ -28,6 +28,9 @@ function display(book) {
         e.target.parentNode.remove();
     });
     deleteBtn.textContent = "Delete the book, bro!";
+    let read = document.createElement('button');
+    deleteBtn.after(read);
+    read.textContent = "Never read it, pal!";
 };
 
 
@@ -40,5 +43,3 @@ function ask() {
     addBookToLibrary(obj);
     display(obj);
 }
-
-

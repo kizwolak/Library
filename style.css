@@ -27,10 +27,10 @@ body {
     flex-direction: row;
     border: 10px solid pink;
     border-radius: 1em;
-    margin-top: 6em;
+    margin-top: 5em;
     margin-bottom: 2em;
-    gap: 5em;
-    padding: 2em;
+    gap: 35em;
+    padding: 3em;
 }
 
 .title, .author {
@@ -43,5 +43,19 @@ body {
 .title>*, .author>* {
     overflow-wrap: anywhere;
     font-size: 0.8em;
+    display: flex;
+    flex-direction: row;
+}
 
+#btn {
+    font-size: 2em;
+    padding: 0.3em;
+    color: black;
+    border: 5px solid pink;
+}
+
+.author>button {
+    font-size: 0.5em;
+    padding: 0.5em;
+    background-color: transparent;
 }
