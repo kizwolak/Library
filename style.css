@@ -2,22 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Photo by Zaini Izzuddin https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText*/
+    background-image: url("./zaini-izzuddin-55btQzyDiO8-unsplash.jpg");
+    background-size: cover; 
 
 }
 
 .container {
+    justify-content: center;
     display: flex;
     align-items: center;
-    width: 90vw;
-    height: 90vh;
+    width: 80vw;
+    height: 80vh;
     flex-direction: column;
+    border: 10px solid pink;
+    border-radius: 1em;
+    margin-top: 6em;
+    margin-bottom: 2em;
 }
 
 .newDiv {
     display: flex;
+    gap: 10em;
+    background-color: aliceblue;
+    width: 100%;
+    padding-left: 1em;
+    font-size: 2em;
 }
 
-#btn {
-    
+.newDiv>button {
     
 }
+

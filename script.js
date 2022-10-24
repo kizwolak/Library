@@ -30,6 +30,7 @@ function display(book) {
     deleteBtn.addEventListener('click', function(e) {
         e.target.parentNode.remove();
     });
+    deleteBtn.textContent = "Delete the book, bro!";
 };
 
 
