@@ -14,7 +14,7 @@ function addBookToLibrary(obj) {
 };
 
 function display(library) {
-    for (prop in library) {
+    library.forEach(function (prop) {
         let bookDiv = document.createElement('div');
         bookDiv.className = "bookDiv"; 
         container.appendChild(bookDiv);
@@ -28,14 +28,16 @@ function display(library) {
         authorDiv.innerHTML = author1;
         let deleteBtn = document.createElement('button');
         authorDiv.after(deleteBtn);
+        const index = myLibrary.map(prop => prop.name).indexOf(`${prop.name}`)
         deleteBtn.addEventListener('click', function(e) {
             e.target.parentNode.remove();
+            library.splice(index, 1);
         });
         deleteBtn.textContent = "Delete the book, bro!";
         let read = document.createElement('button');
         deleteBtn.after(read);
         read.textContent = "Never read it, pal!";
-    };
+    });
 };
 
 
@@ -48,3 +50,4 @@ function ask() {
     addBookToLibrary(obj);
     display(myLibrary);
 }
+
