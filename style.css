@@ -16,16 +16,15 @@ body {
 }
 
 .container {
-    justify-content: center;
     display: flex;
-    align-items: center;
     width: 80vw;
     height: 80vh;
-    flex-direction: column;
+    flex-direction: row;
     border: 10px solid pink;
     border-radius: 1em;
     margin-top: 6em;
     margin-bottom: 2em;
+    gap: 5em;
 }
 
 .newDiv {
@@ -38,6 +37,6 @@ body {
 }
 
 .newDiv>button {
-    
+
 }
 

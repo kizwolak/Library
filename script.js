@@ -1,6 +1,8 @@
 let myLibrary = [];
 let container = document.querySelector('.container')
 let button = document.querySelector('#btn');
+let titles = document.querySelector(".title");
+let authors = document.querySelector(".author");
 
 function Book(name, author) {
     this.name = name;
@@ -11,16 +13,11 @@ function addBookToLibrary(obj) {
     myLibrary.push(obj);
 };
 
-console.log(myLibrary)
-
 function display(book) {
-    let newDiv = document.createElement('div');
-    newDiv.className = ('newDiv');
-    container.appendChild(newDiv);
     let titleDiv = document.createElement('div');
-    newDiv.appendChild(titleDiv);
+    titles.appendChild(titleDiv);
     let authorDiv = document.createElement('div');
-    newDiv.appendChild(authorDiv);
+    authors.appendChild(authorDiv);
     let name1 = `${book.name}`;
     let author1 = `${book.author}`; 
     titleDiv.innerHTML = name1;
