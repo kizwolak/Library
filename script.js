@@ -1,12 +1,11 @@
 let myLibrary = [];
-let container = document.querySelector('.container')
 let button = document.querySelector('#btn');
-let displayContents = 0;
 let bookDivs =  document.querySelector('.books');
 
 function Book(name, author) {
     this.name = name;
     this.author = author;
+    this.read = false;
 };
 
 function addBookToLibrary(obj) {
@@ -24,10 +23,8 @@ function display(library) {
         bookDiv.appendChild(titleDiv);
         let authorDiv = document.createElement('div');
         bookDiv.appendChild(authorDiv);
-        let name1 = `${prop.name}`;
-        let author1 = `${prop.author}`; 
-        titleDiv.innerHTML = name1;
-        authorDiv.innerHTML = author1;
+        titleDiv.innerHTML = `${prop.name}`;
+        authorDiv.innerHTML = `${prop.author}`; 
         let deleteBtn = document.createElement('button');
         authorDiv.after(deleteBtn);
         deleteBtn.addEventListener('click', function(e) {
@@ -37,18 +34,13 @@ function display(library) {
         deleteBtn.textContent = "Delete the book!";
         let read = document.createElement('button');
         deleteBtn.after(read);
-        read.textContent = "Never read it!";
-        read.style.backgroundColor = "red";
-        read.addEventListener('click', (e) => {
-            if (e.target.style.backgroundColor == "red") {
-                e.target.style.backgroundColor = "green";
-                e.target.textContent = "I've read it!";
-            } else {
-                e.target.style.backgroundColor = "red";
-                e.target.textContent = "Never read it!";
-            }
-
-        })
+        if (prop.read === false) {
+            read.style.backgroundColor = "red";
+            read.textContent = "Never read it!";
+        }; if (prop.read === true) {
+            read.style.backgroundColor = "green";
+            read.textContent = "I've read it!";
+        }
     });
 };
 
