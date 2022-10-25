@@ -14,11 +14,8 @@ function addBookToLibrary(obj) {
 };
 
 function display(library) {
+    bookDivs.innerHTML = '';
     library.forEach(function (prop) {
-        if (displayContents > 0) {
-            bookDivs.innerHTML = '';
-        }
-        displayContents += 1;
         const index = myLibrary.map(prop => prop.name).indexOf(`${prop.name}`);
         let bookDiv = document.createElement('div');
         bookDiv.className = "bookDiv"; 
