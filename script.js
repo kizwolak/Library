@@ -37,10 +37,21 @@ function display(library) {
         if (prop.read === false) {
             read.style.backgroundColor = "red";
             read.textContent = "Never read it!";
-        }; if (prop.read === true) {
+        } if (prop.read === true) {
             read.style.backgroundColor = "green";
             read.textContent = "I've read it!";
-        }
+        };
+        read.addEventListener('click', () => {
+            prop.read = !prop.read;
+            console.log(prop.read);
+            if (prop.read === false) {
+                read.style.backgroundColor = "red";
+                read.textContent = "Never read it!";
+            } if (prop.read === true) {
+                read.style.backgroundColor = "green";
+                read.textContent = "I've read it!";
+            };
+        });
     });
 };
 
