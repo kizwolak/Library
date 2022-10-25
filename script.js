@@ -14,7 +14,7 @@ function addBookToLibrary(obj) {
 };
 
 function display(library) {
-    bookDivs.innerHTML = '';
+    bookDivs.textContent = '';
     library.forEach(function (prop) {
         const index = myLibrary.map(prop => prop.name).indexOf(`${prop.name}`);
         let bookDiv = document.createElement('div');
@@ -38,6 +38,17 @@ function display(library) {
         let read = document.createElement('button');
         deleteBtn.after(read);
         read.textContent = "Never read it!";
+        read.style.backgroundColor = "red";
+        read.addEventListener('click', (e) => {
+            if (e.target.style.backgroundColor == "red") {
+                e.target.style.backgroundColor = "green";
+                e.target.textContent = "I've read it!";
+            } else {
+                e.target.style.backgroundColor = "red";
+                e.target.textContent = "Never read it!";
+            }
+
+        })
     });
 };
 
