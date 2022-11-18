@@ -53,26 +53,20 @@ class Book {
         };
 
         const addDeleteButton = () => {
-            let readBtn = document.createElement('button');
-            readBtn.textContent = "Never read it!";
-            readBtn.classList = ".btn";
-            readBtn.style.backgroundColor = "red";
-            readBtn.style.marginLeft = "1em"
-            readBtn.addEventListener('click', () => {
-                if (readBtn.textContent === "Never read it!") {
-                    readBtn.textContent = "Read it!";
-                    readBtn.style.backgroundColor = "green";
-                }
-                else {
-                    readBtn.textContent = "Never read it!";
-                    readBtn.style.backgroundColor = "red";
-                }
+            let deleteBtn = document.createElement('button');
+            deleteBtn.textContent = "Delete";
+            deleteBtn.classList = ".btn";
+            deleteBtn.style.backgroundColor = "red";
+            deleteBtn.style.marginLeft = "1em"
+            deleteBtn.addEventListener('click', () => {
+                
             });
-            book.appendChild(readBtn);
+            book.appendChild(deleteBtn);
         };
         
         addToPage();
         addRemoveButton();
+        addDeleteButton();
     };
 };
 
