@@ -8,7 +8,7 @@ const btns = document.querySelector('#btns');
 const formBtn = document.querySelector('#formBtn');
 const modal = document.querySelector('.modal');
 const span = document.querySelector('.close');
-
+const formSubmit = document.querySelector('#formSubmit');
 
 
 class Book {
@@ -70,4 +70,17 @@ window.addEventListener('click', (e) => {
     if (e.target == modal) {
         modal.style.display = "none";
     }
+});
+
+formSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
+    let formTitle = document.querySelector('#formTitle').value;
+    let formAuthor = document.querySelector('#formAuthor').value;
+    let formYear = document.querySelector('#formYear').value;
+    let book = new Book(formTitle, formAuthor, formYear);
+    book.create();
+    modal.style.display = "none";
+    formTitle.value = '';
+    formAuthor.value = '';
+    formYear.value = '';
 });

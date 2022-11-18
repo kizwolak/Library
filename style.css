@@ -27,6 +27,7 @@ body {
     height: 80vh;
     border: 10px solid pink;
     padding: 3em;
+    margin-top: 3%;
 }
 
 .container>*>* {
@@ -48,12 +49,6 @@ body {
     height: 3em;
 }
 
-
-.author>button {
-    font-size: 0.5em;
-    padding: 0.5em;
-    background-color: transparent;
-}
 
 .bookDiv {
     display: grid;
@@ -84,6 +79,10 @@ body {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+#formBtn {
+    margin-top: 3%;
+}
+
 .modal {
     display: none; 
     position: fixed; 
@@ -103,17 +102,26 @@ body {
     margin: 15% auto;
     padding: 1em;
     border: 1px solid #888;
-    width: 80%; 
+    width: 30%; 
+
+  }
+
+  form {
+    margin: 1em 25%; 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  h2 {
+    margin: 1em 0;
   }
   
   .close {
     color: #aaa;
-    float: right;
     font-size: 3em;
     font-weight: bold;
+    float: right;
   }
   
   .close:hover,
