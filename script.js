@@ -44,10 +44,10 @@ class Book {
                     readBtn.textContent = "Never read it!";
                     readBtn.style.backgroundColor = "red";
                 }
-    
-                book.appendChild(readBtn);
             });
-        }
+            book.appendChild(readBtn);
+        };
+        
         addToPage();
         addRemoveButton();
     };
