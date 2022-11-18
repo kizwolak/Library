@@ -22,10 +22,12 @@ body {
 
 .container {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     width: 80vw;
     height: 80vh;
     border: 10px solid pink;
+    border-radius: 1em;
     padding: 3em;
     margin-top: 3%;
 }
@@ -45,7 +47,7 @@ body {
     color: black;
     border: 2px solid pink;
     border-radius: 1em;
-    width: 6em;
+    width: 4em;
     height: 3em;
 }
 
@@ -63,8 +65,11 @@ body {
 }
 
 .bookDiv>button {
-    width: 50%;
-    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    height: 3.5em;
+    width: 5em;
+    border-radius: 1em;
 }
 
 .headerDivs {

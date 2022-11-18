@@ -38,7 +38,6 @@ class Book {
             readBtn.textContent = "Never read it!";
             readBtn.classList = ".btn";
             readBtn.style.backgroundColor = "red";
-            readBtn.style.marginLeft = "1em"
             readBtn.addEventListener('click', () => {
                 if (readBtn.textContent === "Never read it!") {
                     readBtn.textContent = "Read it!";
@@ -57,18 +56,25 @@ class Book {
             deleteBtn.textContent = "Delete";
             deleteBtn.classList = ".btn";
             deleteBtn.style.backgroundColor = "red";
-            deleteBtn.style.marginLeft = "1em"
-            deleteBtn.addEventListener('click', () => {
-                
+            deleteBtn.addEventListener('click', (e) => {
+                deleteBtn.parentNode.remove();
             });
             book.appendChild(deleteBtn);
         };
         
         addToPage();
-        addRemoveButton();
+        addReadButton();
         addDeleteButton();
     };
 };
+
+let HP = new Book ("HP", "JKR", "1999");
+let LOTR = new Book ("LOTR", "JRRT", "1960s");
+let GOT = new Book ("GOT", "GRRM", "90s");
+
+HP.create();
+LOTR.create();
+GOT.create();
 
 
 formBtn.addEventListener('click', () => {
