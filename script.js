@@ -1,10 +1,14 @@
 let myLibrary = [];
-let headerDivs = document.querySelector('.headerDivs');
-let container = document.querySelector('.container');
-let title = document.querySelector("#title");
-let author = document.querySelector('#author');
-let year = document.querySelector('#year');
-let btns = document.querySelector('#btns');
+const headerDivs = document.querySelector('.headerDivs');
+const container = document.querySelector('.container');
+const title = document.querySelector("#title");
+const author = document.querySelector('#author');
+const year = document.querySelector('#year');
+const btns = document.querySelector('#btns');
+const formBtn = document.querySelector('#formBtn');
+const modal = document.querySelector('.modal');
+const span = document.querySelector('.close');
+
 
 
 class Book {
@@ -51,13 +55,19 @@ class Book {
         addToPage();
         addRemoveButton();
     };
-
-
 };
 
-let HP = new Book ("HP", "JKR", "1999");
-let LOTR = new Book ("LOTR", "JRRT", "1960s");
 
-HP.create();
+formBtn.addEventListener('click', () => {
+    modal.style.display = "block";
+});
 
-LOTR.create();
+span.addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+});
