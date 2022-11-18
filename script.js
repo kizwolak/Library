@@ -33,7 +33,26 @@ class Book {
             book.appendChild(document.createElement('div')).innerHTML = this.author;
             book.appendChild(document.createElement('div')).innerHTML = this.year;
         }
-        const addRemoveButton = () => {
+        const addReadButton = () => {
+            let readBtn = document.createElement('button');
+            readBtn.textContent = "Never read it!";
+            readBtn.classList = ".btn";
+            readBtn.style.backgroundColor = "red";
+            readBtn.style.marginLeft = "1em"
+            readBtn.addEventListener('click', () => {
+                if (readBtn.textContent === "Never read it!") {
+                    readBtn.textContent = "Read it!";
+                    readBtn.style.backgroundColor = "green";
+                }
+                else {
+                    readBtn.textContent = "Never read it!";
+                    readBtn.style.backgroundColor = "red";
+                }
+            });
+            book.appendChild(readBtn);
+        };
+
+        const addDeleteButton = () => {
             let readBtn = document.createElement('button');
             readBtn.textContent = "Never read it!";
             readBtn.classList = ".btn";
