@@ -73,9 +73,7 @@ body {
 }
 
 .headerDivs {
-    
-    display: grid;
-    grid-template-columns: 3fr 3fr 1fr 1fr;
+    display: flex;
     margin-bottom: 1em;
 }
 
