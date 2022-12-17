@@ -76,7 +76,6 @@ HP.create();
 LOTR.create();
 GOT.create();
 
-
 formBtn.addEventListener('click', () => {
     modal.style.display = "block";
 });
@@ -91,15 +90,31 @@ window.addEventListener('click', (e) => {
     }
 });
 
-formSubmit.addEventListener('click', (e) => {
+mainSubmit: formSubmit.addEventListener('click', (e) => {
     e.preventDefault();
-    let formTitle = document.querySelector('#formTitle').value;
-    let formAuthor = document.querySelector('#formAuthor').value;
-    let formYear = document.querySelector('#formYear').value;
-    let book = new Book(formTitle, formAuthor, formYear);
-    book.create();
-    modal.style.display = "none";
-    formTitle.value = '';
-    formAuthor.value = '';
-    formYear.value = '';
+    let formTitle = document.querySelector('#formTitle');
+    let formAuthor = document.querySelector('#formAuthor');
+    let formYear = document.querySelector('#formYear');
+    console.log(formTitle.checkValidity());
+    function check() {
+        if (!formTitle.checkValidity()) {
+            console.log(formTitle.validationMessage);
+            return;
+        } else if (!formAuthor.checkValidity()) {
+            console.log(formAuthor.validationMessage);
+            return;
+        } else if (!formYear.checkValidity()) {
+            console.log(formYear.validationMessage);
+            return;
+        }
+        else {
+            let book = new Book(formTitle.value, formAuthor.value, formYear.value);
+            book.create();
+            modal.style.display = "none";
+            formTitle.value = '';
+            formAuthor.value = '';
+            formYear.value = '';
+        }
+    }
+    check();
 });

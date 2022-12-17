@@ -28,21 +28,16 @@
             <h2>Add new book</h2>
 
             <label for="formTitle">Book title</label>
-            <input type="text" id="formTitle">
+            <input type="text" id="formTitle" required minlength="3">
             <label for="formAuthor">Author</label>
-            <input type="text" id="formAuthor">
+            <input type="text" id="formAuthor" required minlength="1">
             <label for="formYear">Year released</label>
-            <input type="text" id="formYear">
-
+            <input type="number" id="formYear" required minlength="1">
             <button type="submit" id="formSubmit">Add new book</button>
 
           </form>
         </div>
-      
     </div>
-
-
-
 </body>
 <script src="script.js"></script>
 </html>
